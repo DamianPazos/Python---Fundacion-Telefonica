@@ -6,6 +6,8 @@ import random
 contador = 0
 list_numeros_random = []
 dicc_numeros = {}
+valor_mas_alto = None
+keys_mas_alto = []
 
 while contador != 51:
     contador += 1
@@ -13,12 +15,22 @@ while contador != 51:
     list_numeros_random.append(numero_random)
 
 for x in list_numeros_random:
-    if x in dicc_numeros.keys():
-        valor = dicc_numeros.get(f'{x}') + 1
-        dicc_numeros.update({f'{x}': valor})
+    list_keys = dicc_numeros.keys()
+    if x not in list_keys:
+        dicc_numeros.update({x : 1})
     else:
-        dicc_numeros.update({f'{x}': 1})
+        valor = dicc_numeros.get(x) + 1
+        dicc_numeros.update({x : valor})
 
+for y in dicc_numeros:
+    if valor_mas_alto == None:
+        valor_mas_alto = dicc_numeros.get(y)
+    else:
+        if valor_mas_alto < dicc_numeros.get(y):
+            valor_mas_alto = dicc_numeros.get(y)
+            
+for y in dicc_numeros:
+    if dicc_numeros.get(y) == valor_mas_alto:
+        keys_mas_alto.append(y)
 
-print(list_numeros_random)
-print(dicc_numeros)
+print(f'El numero que mas se repite en la lista es/son: {keys_mas_alto}')
