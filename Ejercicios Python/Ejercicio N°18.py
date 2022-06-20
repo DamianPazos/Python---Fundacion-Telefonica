@@ -25,4 +25,3 @@ Opciones:
         break
     else:
         print('Eligio una opcion incorrecta')
-        
