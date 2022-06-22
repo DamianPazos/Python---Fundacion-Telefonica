@@ -9,7 +9,7 @@ dicc_numeros = {}
 valor_mas_alto = None
 keys_mas_alto = []
 
-while contador != 51:
+while contador != 50:
     contador += 1
     numero_random = int((random.random())*10)
     list_numeros_random.append(numero_random)
