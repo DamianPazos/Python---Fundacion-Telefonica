@@ -11,4 +11,3 @@ for letra in cadena:
         cadena_vocales.append(letra_mayus)
 
 print(f'Las vocales son: {cadena_vocales}')
-    
