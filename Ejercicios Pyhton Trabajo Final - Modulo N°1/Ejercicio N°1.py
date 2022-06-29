@@ -5,14 +5,10 @@
 # El código debe funcionar para cualquier cantidad de números que le 
 # pasemos como argumentos.
 
-def suma_numeros():
-    cantidad_numeros = int(input('Ingrese la cantidad de numeros que va ingresar: '))
-    contador = 0
+def suma_numeros(*args):
     suma = 0
-    while contador < cantidad_numeros:
-        numero = int(input('Ingrese un numero: '))
-        suma += numero
-        contador += 1
+    for i in args:
+        suma += i
     return suma
         
-print(suma_numeros())        
+print(suma_numeros(1,5,3,5,1))        
